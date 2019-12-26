@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 MAINTAINER Daniel Wiltshire
 
 RUN apt-get update && \
