@@ -12,3 +12,7 @@ RUN apt-get update && \
   apt-get install --no-install-recommends --yes \
   openjdk-11-jre-headless \
   && rm -rf /var/lib/apt/lists/*
+
+EXPOSE 25565/tcp
+
+ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar
