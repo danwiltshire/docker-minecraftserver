@@ -20,6 +20,12 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
 8. `kubectl create deployment minecraftserver-dpmt --image=gcr.io/${PROJECT_ID}/minecraftserver:v1`
 9. `kubectl expose deployment minecraftserver-dpmt --type=LoadBalancer --port 25565 --target-port 25565`
+10. `kubectl scale deployment minecraftserver-dpmt --replicas=3`
+
+#### Verification
+- `kubectl get service`
+- `kubectl get deployment minecraftserver-dpmt`
+- `kubectl get pods`
 
 ## Next steps
 1. Persistent volumes for MC world data
