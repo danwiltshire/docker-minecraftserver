@@ -14,6 +14,7 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 1. `git clone https://github.com/danwiltshire/docker-minecraftserver.git`
 2. `export PROJECT_ID=eminent-century-263110`
 3. `docker build -t gcr.io/${PROJECT_ID}/minecraftserver:v1 .`
+4. `docker push gcr.io/${PROJECT_ID}/minecraftserver:v1`
 
 ## Next steps
 1. Persistent volumes for MC world data
