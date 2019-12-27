@@ -27,6 +27,10 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 - `kubectl get deployment minecraftserver-dpmt`
 - `kubectl get pods`
 
+#### Misc commands
+- Specify what cluster to run kubectl against: `gcloud container clusters get-credentials my-cluster`
+- Running individual kubectl commands against a specific cluster using `--cluster my-cluster`
+
 ## Next steps
 1. Persistent volumes for MC world data
 2. How to automate VM infrastructure for Docker/K8s - Terraform?
