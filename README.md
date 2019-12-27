@@ -16,6 +16,8 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 3. `gcloud config set project $PROJECT_ID`
 4. `docker build -t gcr.io/${PROJECT_ID}/minecraftserver:v1 .`
 5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:v1`
+6. `gcloud config set compute/zone europe-west2-b`
+7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
 
 ## Next steps
 1. Persistent volumes for MC world data
