@@ -18,6 +18,8 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:v1`
 6. `gcloud config set compute/zone europe-west2-b`
 7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
+8. `kubectl create deployment minecraftserver-dpmt --image=gcr.io/${PROJECT_ID}/minecraftserver:v1`
+9. `kubectl expose deployment minecraftserver-dpmt --type=LoadBalancer --port 25565 --target-port 25565`
 
 ## Next steps
 1. Persistent volumes for MC world data
