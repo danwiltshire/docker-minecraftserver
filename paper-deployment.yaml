@@ -24,5 +24,5 @@ spec:
         ports:
         - containerPort: 25565
         volumeMounts:
-        - mountPath: "/media/data"
+        - mountPath: "/mnt/data"
           name: paper-pv-storage
