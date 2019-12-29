@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: paper-service
+spec:
+  selector:
+    app: paper
+  ports:
+    - protocol: TCP
+      port: 25565
+      targetPort: 25565
