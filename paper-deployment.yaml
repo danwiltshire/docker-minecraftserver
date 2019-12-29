@@ -19,3 +19,6 @@ spec:
         image: gcr.io/eminent-century-263110/minecraftserver:v1
         ports:
         - containerPort: 25565
+        volumeMounts:
+        - mountPath: "/media/data"
+          name: paper-pv-storage
