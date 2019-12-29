@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paper-deployment
+  labels:
+    app: paper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paper
+  template:
+    metadata:
+      labels:
+        app: paper
+    spec:
+      containers:
+      - name: paper-container
+        image: gcr.io/eminent-century-263110/minecraftserver:v1
+        ports:
+        - containerPort: 25565
