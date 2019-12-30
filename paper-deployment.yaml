@@ -7,8 +7,8 @@ metadata:
 spec:
   volumes:
     - name: task-pv-storage
-    persistentVolumeClaim:
-      claimName: task-pv-claim
+      persistentVolumeClaim:
+        claimName: task-pv-claim
   replicas: 1
   selector:
     matchLabels:
