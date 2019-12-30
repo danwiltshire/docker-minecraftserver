@@ -5,6 +5,10 @@ metadata:
   labels:
     app: paper
 spec:
+  volumes:
+    - name: task-pv-storage
+    persistentVolumeClaim:
+      claimName: task-pv-claim
   replicas: 1
   selector:
     matchLabels:
@@ -30,3 +34,6 @@ spec:
           initialDelaySeconds: 60
           failureThreshold: 10
           periodSeconds: 20
+        volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: task-pv-storage
