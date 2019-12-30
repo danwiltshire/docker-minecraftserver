@@ -33,4 +33,7 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
 ## Next steps
 1. Persistent volumes for MC world data
+- The volume now mounts under /mnt/data
+- Next; run MC from the dir.  Permissions and dedicated minecraft user?
 2. How to automate VM infrastructure for Docker/K8s - Terraform?
+- Scaffold? is this GCP only?
