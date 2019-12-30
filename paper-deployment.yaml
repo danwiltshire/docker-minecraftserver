@@ -17,7 +17,7 @@ spec:
       volumes:
         - name: paper-pv-data
           persistentVolumeClaim:
-            claimName: my-volume
+            claimName: paper-pv-claim
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:latest
