@@ -21,6 +21,7 @@ spec:
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:v1
+        env:
         ports:
         - containerPort: 25565
         readinessProbe:
