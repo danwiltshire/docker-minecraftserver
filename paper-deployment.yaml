@@ -14,6 +14,10 @@ spec:
       labels:
         app: paper
     spec:
+      volumes:
+        - name: paper-pv-data
+          persistentVolumeClaim:
+            claimName: my-volume
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:v1
@@ -30,3 +34,6 @@ spec:
           initialDelaySeconds: 60
           failureThreshold: 10
           periodSeconds: 20
+        volumeMounts:
+          - mountPath: "/mnt/data"
+            name: paper-pv-data
