@@ -14,15 +14,8 @@ spec:
       labels:
         app: paper
     spec:
-      volumes:
-      - name: paper-pv-storage
-        persistentVolumeClaim:
-          claimName: paper-pv-claim
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:v1
         ports:
         - containerPort: 25565
-        volumeMounts:
-        - mountPath: "/mnt/data"
-          name: paper-pv-storage
