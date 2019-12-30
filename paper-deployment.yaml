@@ -19,3 +19,13 @@ spec:
         image: gcr.io/eminent-century-263110/minecraftserver:v1
         ports:
         - containerPort: 25565
+        readinessProbe:
+          tcpSocket:
+            port: 25565
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 25565
+          initialDelaySeconds: 60
+          periodSeconds: 20
