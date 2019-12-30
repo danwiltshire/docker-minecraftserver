@@ -31,6 +31,7 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 #### Misc commands
 - Specify what cluster to run kubectl against: `gcloud container clusters get-credentials my-cluster`
 - Running individual kubectl commands against a specific cluster using `--cluster my-cluster`
+- RCON `mcrcon -H x.x.x.x -P 25575 -p xxxxxxxxxxx -t`
 
 ## Next steps
 1. Persistent volumes for MC world data
