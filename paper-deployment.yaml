@@ -28,4 +28,5 @@ spec:
           tcpSocket:
             port: 25565
           initialDelaySeconds: 60
+          failureThreshold: 10
           periodSeconds: 20
