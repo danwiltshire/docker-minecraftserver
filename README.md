@@ -18,9 +18,10 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:v1`
 6. `gcloud config set compute/zone europe-west2-b`
 7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
-8. `kubectl create deployment minecraftserver-dpmt --image=gcr.io/${PROJECT_ID}/minecraftserver:v1`
-9. `kubectl expose deployment minecraftserver-dpmt --type=LoadBalancer --port 25565 --target-port 25565`
-10. `kubectl scale deployment minecraftserver-dpmt --replicas=3`
+8. `kubectl apply -f ssd-storageclass.yaml`
+9. `kubectl apply -f ssd-claim.yaml`
+10. `kubectl apply -f paper-deployment.yaml`
+11. `kubectl apply -f paper-service.yaml`
 
 #### Verification
 - `kubectl get service`
