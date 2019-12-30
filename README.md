@@ -14,8 +14,8 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 1. `git clone https://github.com/danwiltshire/docker-minecraftserver.git`
 2. `export PROJECT_ID=eminent-century-263110`
 3. `gcloud config set project $PROJECT_ID`
-4. `docker build -t gcr.io/${PROJECT_ID}/minecraftserver:v1 .`
-5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:v1`
+4. `docker build -t gcr.io/${PROJECT_ID}/minecraftserver:latest .`
+5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:latest`
 6. `gcloud config set compute/zone europe-west2-b`
 7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
 8. `kubectl apply -f ssd-storageclass.yaml`
