@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 MAINTAINER Daniel Wiltshire
 
-WORKDIR /opt/minecraft
+WORKDIR /mnt/data
 
 ADD https://papermc.io/api/v1/paper/1.15.1/latest/download paperclip.jar
 
@@ -14,4 +14,4 @@ RUN rm -rf /var/lib/apt/lists/*
 
 EXPOSE 25565/tcp
 
-ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar
+ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /mnt/data/paperclip.jar
