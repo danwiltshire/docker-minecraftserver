@@ -4,13 +4,13 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 MAINTAINER Daniel Wiltshire
 
-WORKDIR /opt/minecraft
-
-ADD https://papermc.io/api/v1/paper/1.15.1/latest/download paperclip.jar
+ADD https://papermc.io/api/v1/paper/1.15.1/latest/download /opt/minecraft/paperclip.jar
 
 RUN apt-get update && apt-get install --no-install-recommends --yes openjdk-11-jre-headless
 
 RUN rm -rf /var/lib/apt/lists/*
+
+WORKDIR /mnt/data
 
 EXPOSE 25565/tcp
 
