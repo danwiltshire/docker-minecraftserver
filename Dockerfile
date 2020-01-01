@@ -14,4 +14,4 @@ WORKDIR /mnt/data
 
 EXPOSE 25565/tcp
 
-ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar
+ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar nogui --noconsole
