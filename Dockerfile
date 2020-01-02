@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 # Resolve warnings in console when using apt
 ARG DEBIAN_FRONTEND=noninteractive
 
-MAINTAINER Daniel Wiltshire
+LABEL MAINTAINER="Daniel Wiltshire"
 
 # Download the Paper .JAR
 ADD https://papermc.io/api/v1/paper/1.15.1/latest/download /opt/minecraft/paperclip.jar

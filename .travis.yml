@@ -3,10 +3,10 @@ services:
 
 before_install:
   - docker-compose build
+  - bash tests/google-cst/get-cst.sh
 
 install:
   - docker-compose up -d
 
 script:
-  - docker images
-  - docker ps
+  - bash tests/google-cst/run-cst.sh
