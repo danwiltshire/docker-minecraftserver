@@ -21,12 +21,6 @@ spec:
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:latest
-        workingDir: /mnt/data
-        command: ["java"]
-        args: ["-jar", "-Xms2G", "-Xmx2G", "-Dcom.mojang.eula.agree=true", "/opt/minecraft/paperclip.jar"]
-        env:
-        ports:
-        - containerPort: 25565
         readinessProbe:
           tcpSocket:
             port: 25565
