@@ -1,0 +1,36 @@
+schemaVersion: "2.0.0"
+
+metadataTest:
+  exposedPorts: ["25565"]
+  labels:
+    - key: 'MAINTAINER'
+      value: 'Daniel Wiltshire'
+  workdir: "/mnt/data"
+
+fileExistenceTests:
+  - name: 'paperclip.jar'
+    path: '/opt/minecraft/paperclip.jar'
+    shouldExist: true
+    permissions: '-rwxrwx---'
+    uid: 1000
+    gid: 0
+  - name: 'paper data directory'
+    path: '/mnt/data'
+    shouldExist: true
+    permissions: 'drwxrwx---'
+    uid: 1000
+    gid: 0
+
+commandTests:
+  - name: "Java JVM installation"
+    command: "which"
+    args: ["java"]
+    expectedOutput: ["/usr/bin/java"]
+  - name: "paper user present"
+    command: "id"
+    args: ["-u", "paper"]
+    expectedOutput: ["1000"]
+  - name: "paper group present"
+    command: "id"
+    args: ["-g", "paper"]
+    expectedOutput: ["1000"]
