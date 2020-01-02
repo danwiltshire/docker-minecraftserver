@@ -9,3 +9,4 @@ install:
 
 script:
   - docker images
+  - docker ps
