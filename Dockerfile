@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install --no-install-recommends --yes openjdk-11-j
 RUN rm -rf /var/lib/apt/lists/*
 
 # Add user with default values
-RUN useradd -ms /bin/bash paper
+RUN useradd -m -u 1000 -s /bin/bash paper
 
 RUN mkdir /mnt/data
 

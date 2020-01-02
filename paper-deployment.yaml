@@ -14,6 +14,9 @@ spec:
       labels:
         app: paper
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       volumes:
         - name: paper-pv-data
           persistentVolumeClaim:
