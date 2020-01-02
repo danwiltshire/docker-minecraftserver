@@ -15,13 +15,18 @@ RUN apt-get update && apt-get install --no-install-recommends --yes openjdk-11-j
 RUN rm -rf /var/lib/apt/lists/*
 
 # Add user with default values
-RUN adduser -D minecraft
+RUN useradd -ms /bin/bash paper
+
+RUN mkdir /mnt/data
 
 # Set ownership of persistent volume
-RUN chmod -R 755 /mnt/data && chown -R minecraft /mnt/data
+RUN chmod 770 /mnt/data && chown paper:root /mnt/data
+
+# Set ownership of Paper jar directory
+RUN chmod 770 -R /opt/minecraft && chown paper:root -R /opt/minecraft
 
 # Set execution user
-USER minecraft
+USER paper
 
 # Minecraft data (worlds, plugins, etc) in here
 WORKDIR /mnt/data
