@@ -1,34 +1,20 @@
 # docker-minecraftserver
-Dockerised Minecraft server using Paper
+Dockerised Minecraft server using Paper with optional configuration for Kubernetes.
 
-## Project Stages
-1. Deployable Docker container that auto runs the latest version of Paper
-2. Testing with Travis CI
-3. Automated container deployment somewhere...
+The Paper server will start automatically and the default Minecraft port (25565/tcp) will be exposed.  A Persistent Volume is used for server and player data.
 
-## Project notes
+## Usage
 
-### GCP Docker and Kubernetes app deployment
-https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+### Docker
+`docker-compose up`
 
-1. `git clone https://github.com/danwiltshire/docker-minecraftserver.git`
-2. `export PROJECT_ID=eminent-century-263110`
-3. `gcloud config set project $PROJECT_ID`
-4. `docker build -t gcr.io/${PROJECT_ID}/minecraftserver:latest .`
-5. `docker push gcr.io/${PROJECT_ID}/minecraftserver:latest`
-6. `gcloud config set compute/zone europe-west2-b`
-7. `gcloud container clusters create minecraftserver-cluster --num-nodes=2`
-8. `kubectl apply -f ssd-storageclass.yaml`
-9. `kubectl apply -f ssd-claim.yaml`
-10. `kubectl apply -f paper-deployment.yaml`
-11. `kubectl apply -f paper-service.yaml`
+### Kubernetes
+**You must have a Kubernetes-ready cluster to deploy to.**
 
-#### Verification
-- `kubectl get service`
-- `kubectl get deployment minecraftserver-dpmt`
-- `kubectl get pods`
+1. `kubectl apply -f ssd-storageclass.yaml`
+2. `kubectl apply -f ssd-claim.yaml`
+3. `kubectl apply -f paper-deployment.yaml`
+4. `kubectl apply -f paper-service.yaml`
 
-#### Misc commands
-- Specify what cluster to run kubectl against: `gcloud container clusters get-credentials my-cluster`
-- Running individual kubectl commands against a specific cluster using `--cluster my-cluster`
-- RCON `mcrcon -H x.x.x.x -P 25575 -p xxxxxxxxxxx -t`
+## Warnings
+- Only tested in Docker and Google Kubernetes Engine (GKE).
