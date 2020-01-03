@@ -21,3 +21,9 @@ The Paper server will start automatically and the default Minecraft port (25565/
 
 ## Warnings
 - Only tested in Docker and Google Kubernetes Engine (GKE).
+
+## Acknowledgements
+I'd like to thank the following GitHub users for allowing others to use their hard work.
+
+- [ldilley](https://github.com/ldilley/minestat) for Minestat
+
