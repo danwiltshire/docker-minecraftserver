@@ -8,7 +8,7 @@ before_install:
   - bash tests/google-cst/get-cst.sh
 
 install:
-  - docker-compose --privileged --verbose up -d
+  - docker-compose --verbose up -d
 
 before_script:
   - docker ps

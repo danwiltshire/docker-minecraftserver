@@ -2,6 +2,7 @@ version: '3'
 services:
   paper:
     build: .
+    privileged: true
     volumes:
       - data:/mnt/data
 volumes:
