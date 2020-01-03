@@ -8,11 +8,11 @@ before_install:
   - bash tests/google-cst/get-cst.sh
 
 install:
-  - docker-compose --verbose up -d
+  - docker-compose --privileged --verbose up -d
 
 before_script:
   - docker ps
-  - sleep 300
+  - sleep 100
   - docker-compose logs
 
 script:
