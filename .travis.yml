@@ -12,7 +12,7 @@ install:
 
 before_script:
   - docker ps
-  - sleep 60
+  - sleep 300
   - docker-compose logs
 
 script:
