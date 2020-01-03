@@ -4,7 +4,7 @@ import minestat
 
 server = 'localhost'
 port = 25565
-timeout = time.time() + 300 # How long in seconds to keep retrying
+timeout = time.time() + 120 # How long in seconds to keep retrying
 retryTimeout = 5 # How long in seconds between retries
 
 print('Checking status of ' + server + ':' + str(port) + '...')
