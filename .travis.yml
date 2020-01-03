@@ -12,6 +12,7 @@ install:
 
 before_script:
   - docker ps
+  - travis_wait 20 docker-compose logs
 
 script:
   - bash tests/google-cst/run-cst.sh
