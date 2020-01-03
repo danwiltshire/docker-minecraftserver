@@ -2,6 +2,8 @@ version: '3'
 services:
   paper:
     build: .
+    ports:
+      - "25565:25565"
     volumes:
       - data:/mnt/data
 volumes:
