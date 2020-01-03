@@ -10,6 +10,9 @@ before_install:
 install:
   - docker-compose up -d
 
+before_script:
+  - docker ps
+
 script:
   - bash tests/google-cst/run-cst.sh
   - python tests/minestat/status-loop.py
