@@ -1,4 +1,5 @@
 # docker-minecraftserver
+https://travis-ci.com/danwiltshire/docker-minecraftserver.svg?branch=master
 Dockerised Minecraft server using Paper with optional configuration for Kubernetes.
 
 The Paper server will start automatically and the default Minecraft port (25565/tcp) will be exposed.  A Persistent Volume is used for server and player data.
