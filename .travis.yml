@@ -12,3 +12,4 @@ install:
 
 script:
   - bash tests/google-cst/run-cst.sh
+  - python tests/minestat/status-loop.py
