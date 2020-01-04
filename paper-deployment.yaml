@@ -5,7 +5,6 @@ metadata:
   labels:
     app: paper
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: paper
@@ -13,8 +12,8 @@ spec:
     metadata:
       labels:
         app: paper
-    strategy:
-      type: Recreate
+  strategy:
+    type: Recreate
     spec:
       securityContext:
         runAsUser: 1000
