@@ -9,15 +9,23 @@ The Paper server will start automatically and the default Minecraft port (25565/
 ## Usage
 
 ### Docker
-`docker-compose up`
+`docker-compose up -d` # Start container with detached console
+`docker-compose ps` # Get containers
+`docker attach [container]` # Console to container
+`docker-compose logs`
 
 ### Kubernetes
-**You must have a Kubernetes-ready cluster to deploy to.**
+You must have a Kubernetes-ready cluster to deploy to.
 
-1. `kubectl apply -f ssd-storageclass.yaml`
-2. `kubectl apply -f ssd-claim.yaml`
+1. `kubectl apply -f ssd-storageclass.yaml` # GKE only
+2. `kubectl apply -f ssd-claim.yaml` # GKE only
 3. `kubectl apply -f paper-deployment.yaml`
 4. `kubectl apply -f paper-service.yaml`
+
+Operational commands
+
+- `kubectl get pods` # Get pods
+- `kubectl attach -it [podName]` # Console to container
 
 ## Warnings
 - Only tested in Docker and Google Kubernetes Engine (GKE).
