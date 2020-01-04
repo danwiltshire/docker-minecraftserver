@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: paper-statefulset
+  labels:
+    app: paper
+spec:
+  selector:
+    matchLabels:
+      app: paper # has to match .spec.template.metadata.labels
+  serviceName: "paper"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: paper # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 60
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
+      volumes:
+        - name: paper-pv-data
+          persistentVolumeClaim:
+            claimName: paper-pv-claim
+      containers:
+      - name: paper-container
+        image: gcr.io/eminent-century-263110/minecraftserver:latest
+        tty: true
+        stdin: true
+        readinessProbe:
+          tcpSocket:
+            port: 25565
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 25565
+          initialDelaySeconds: 60
+          failureThreshold: 10
+          periodSeconds: 20
+        volumeMounts:
+          - mountPath: "/mnt/data"
+            name: paper-pv-data
