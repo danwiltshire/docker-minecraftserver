@@ -24,6 +24,8 @@ spec:
       containers:
       - name: paper-container
         image: gcr.io/eminent-century-263110/minecraftserver:latest
+        tty: true
+        stdin: true
         readinessProbe:
           tcpSocket:
             port: 25565
