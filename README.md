@@ -17,10 +17,9 @@ The Paper server will start automatically and the default Minecraft port (25565/
 ### Kubernetes
 You must have a Kubernetes-ready cluster to deploy to.
 
-1. `kubectl apply -f ssd-storageclass.yaml` # GKE only
-2. `kubectl apply -f ssd-claim.yaml` # GKE only
-3. `kubectl apply -f paper-deployment.yaml`
-4. `kubectl apply -f paper-service.yaml`
+1. `kubectl apply -f paper-pv.yaml` # Creates a volume for PaperMC data
+2. `kubectl apply -f paper-statefulset.yaml` # Creates 1 pod for PaperMC
+3. `kubectl apply -f paper-service.yaml` # Creates a public IP mapping
 
 Operational commands
 
