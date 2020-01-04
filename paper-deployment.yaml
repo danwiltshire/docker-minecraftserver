@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: paper
+    strategy:
+      type: Recreate
     spec:
-      strategy:
-        type: Recreate
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
