@@ -34,4 +34,4 @@ WORKDIR /mnt/data
 # Expose the default Minecraft game port
 EXPOSE 25565/tcp
 
-ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar nogui --noconsole
+ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/minecraft/paperclip.jar nogui

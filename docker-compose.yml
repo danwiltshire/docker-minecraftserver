@@ -6,5 +6,7 @@ services:
       - "25565:25565"
     volumes:
       - data:/mnt/data
+    stdin_open: true
+    tty: true
 volumes:
   data: {}
