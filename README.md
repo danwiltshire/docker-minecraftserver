@@ -11,8 +11,7 @@ The Paper server will start automatically and the default Minecraft port (25565/
 ### Docker
 1. `docker-compose up -d` # Start container with detached console
 2. `docker-compose ps` # Get list of containers
-3. `docker attach [containerName]` # Console to container
-*Ctrl P, then Ctrl Q to deattach*
+3. `docker attach [containerName]` # Console to container - *Ctrl P, then Ctrl Q to deattach*
 4. `docker-compose logs`
 
 ### Kubernetes
@@ -25,8 +24,7 @@ You must have a Kubernetes-ready cluster to deploy to.
 Operational commands
 
 - `kubectl get pods` # Get pods
-- `kubectl attach -it [podName]` # Console to container
-*Ctrl P, then Ctrl Q to deattach*
+- `kubectl attach -it [podName]` # Console to container - *Ctrl P, then Ctrl Q to deattach*
 
 ## Warnings
 - Only tested in Docker and Google Kubernetes Engine (GKE).
