@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: paper-pv-claim
+  name: paper-pv
 spec:
-  storageClassName: faster
   accessModes:
     - ReadWriteOnce
   resources:
