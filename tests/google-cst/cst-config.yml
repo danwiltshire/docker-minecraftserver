@@ -9,7 +9,7 @@ metadataTest:
 
 fileExistenceTests:
   - name: 'paperclip.jar'
-    path: '/opt/minecraft/paperclip.jar'
+    path: '/opt/papermc/paperclip.jar'
     shouldExist: true
     permissions: '-rwxrwx---'
     uid: 1000
