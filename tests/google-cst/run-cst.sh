@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$HOME/bin/container-structure-test test -v DEBUG --image docker-minecraftserver_paper --config tests/google-cst/cst-config.yml
+$HOME/bin/container-structure-test test -v DEBUG --image xeonfibre-papermc:latest --config tests/google-cst/cst-config.yml
