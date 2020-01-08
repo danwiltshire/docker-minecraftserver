@@ -11,9 +11,9 @@ fileExistenceTests:
   - name: 'paperclip.jar'
     path: '/opt/papermc/paperclip.jar'
     shouldExist: true
-    permissions: '-rwxrwx---'
+    permissions: '-rw-------'
     uid: 1000
-    gid: 0
+    gid: 1000
   - name: 'paper data directory'
     path: '/mnt/data'
     shouldExist: true
