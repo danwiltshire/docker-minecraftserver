@@ -15,10 +15,8 @@ install:
 
 before_script:
   - docker ps
-  - sleep 120
   - docker logs $(docker ps -q)
 
 script:
   - bash tests/google-cst/run-cst.sh
   - python tests/minestat/status-loop.py
-  
