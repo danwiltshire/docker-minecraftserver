@@ -7,11 +7,11 @@ services:
   - docker
 
 before_install:
-  - docker build --build-arg PAPERMC_VERSION=1.15.2 -t papermc:1.15.2 .
+  - docker build --build-arg PAPERMC_VERSION=1.15.2 -t papermc:test .
   - bash tests/google-cst/get-cst.sh
 
 install:
-  - docker run -d -p 25565:25565 papermc:1.15.2
+  - docker run -d -p 25565:25565 papermc:test
 
 before_script:
   - docker ps
