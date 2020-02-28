@@ -7,11 +7,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t xeonfibre-papermc:latest .
+  - docker build --build-arg PAPERMC_VERSION=1.15.2 -t papermc:1.15.2 .
   - bash tests/google-cst/get-cst.sh
 
 install:
-  - docker run -d -p 127.0.0.1:25565:25565 xeonfibre-papermc:latest
+  - docker run -d -p 25565:25565 papermc:1.15.2
 
 before_script:
   - docker ps
