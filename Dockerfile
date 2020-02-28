@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
+
 ARG DEBIAN_FRONTEND=noninteractive
 ARG PAPERMC_VERSION
+ENV JVM_MEM=1G
+
 LABEL MAINTAINER="Daniel Wiltshire"
 RUN apt-get update && apt-get install --no-install-recommends --yes \
     openjdk-11-jre-headless \
@@ -14,4 +17,4 @@ USER paper
 VOLUME /mnt/data
 WORKDIR /mnt/data
 EXPOSE 25565
-ENTRYPOINT java -jar -Xms2G -Xmx2G -Dcom.mojang.eula.agree=true /opt/papermc/paperclip.jar nogui
+ENTRYPOINT java -jar -Xms${JVM_MEM} -Xmx${JVM_MEM} -Dcom.mojang.eula.agree=true /opt/papermc/paperclip.jar nogui

@@ -5,7 +5,7 @@
 ## Usage examples
 
 1. Build the Docker image: `docker build --build-arg PAPERMC_VERSION=1.15.2 -t papermc:1.15.2 .`
-2. Run the Docker image: `docker run -d -p 25565:25565 papermc:1.15.2`
+2. Run the Docker image: `docker run -d -it -p 25565:25565 papermc:1.15.2`
 
 ## Acknowledgements
 I'd like to thank the following GitHub users for allowing others to use their hard work.
