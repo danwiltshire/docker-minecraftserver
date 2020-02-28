@@ -1,6 +1,6 @@
 # docker-papermc
 
-[![Build Status](https://travis-ci.com/danwiltshire/docker-minecraftserver.svg?branch=master)](https://travis-ci.com/danwiltshire/docker-minecraftserver)
+[![Build Status](https://travis-ci.com/danwiltshire/docker-papermc.svg?branch=master)](https://travis-ci.com/danwiltshire/docker-papermc)
 
 ## Usage examples
 
