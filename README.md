@@ -5,10 +5,7 @@
 ## Usage
 
 1. Build the Docker image: `docker build -t papermc:1.15.1 .`
-2. Run the Docker image: `docker run`
-`docker-compose ps` # Get containers
-`docker attach [container]` # Console to container
-`docker-compose logs`
+2. Run the Docker image: `docker run -d papermc:1.15.1`
 
 ## Acknowledgements
 I'd like to thank the following GitHub users for allowing others to use their hard work.
